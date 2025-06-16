@@ -1,110 +1,664 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ademar_Jr. | Desenvolvedor Web</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/feather-icons"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ademar G. C. Jr. - Desenvolvedor Full Stack especializado em soluções web, APIs e integrações. Portfólio profissional com projetos e experiências.">
+    <meta name="keywords" content="desenvolvedor, full stack, python, django, javascript, web development, APIs">
+    <meta name="author" content="Ademar G. C. Jr.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ademarcandeias.github.io/">
+    <meta property="og:title" content="Ademar G. C. Jr. | Desenvolvedor Full Stack">
+    <meta property="og:description" content="Desenvolvedor Full Stack especializado em soluções web, APIs e integrações">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ademarcandeias.github.io/">
+    <meta property="twitter:title" content="Ademar G. C. Jr. | Desenvolvedor Full Stack">
+    <meta property="twitter:description" content="Desenvolvedor Full Stack especializado em soluções web, APIs e integrações">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Ademar Jr.">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMzYjgyZjYiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CjxwYXRoIGQ9Im0xNiAxNiA0LTQtNC00Ii8+CjxwYXRoIGQ9Im04IDEyaDgiLz4KPC9zdmc+Cjwvc3ZnPgo=">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzNiODJmNiIvPgo8cGF0aCBkPSJNMTYgOEwxNiAyNCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTggMTZMMjQgMTYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=">
+    
+    <title>Ademar G. C. Jr. | Desenvolvedor Full Stack</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-down': 'slideDown 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.4s ease-out',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' },
+                            '100%': { boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/themes.css">
 </head>
-<body class="bg-gray-50 text-gray-800 scroll-smooth relative">
-
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-10 text-center shadow-lg">
-    <h1 class="text-5xl font-bold mb-2">Ademar G. C. Jr.</h1>
-    <p class="text-xl opacity-90">Desenvolvedor Full Stack | Soluções Web | APIs e Integrações</p>
-    <nav class="mt-4 space-x-4 text-lg">
-      <a href="#sobre" class="hover:underline">Sobre</a>
-      <a href="#habilidades" class="hover:underline">Habilidades</a>
-      <a href="#projetos" class="hover:underline">Projetos</a>
-      <a href="#contato" class="hover:underline">Contato</a>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden">
+    
+    <!-- Custom Cursor -->
+    <div id="cursor" class="cursor"></div>
+    <div id="cursor-follower" class="cursor-follower"></div>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2 class="loading-text">Carregando...</h2>
+            <div class="loading-progress">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Particles Background -->
+    <div id="particles-js" class="particles-container"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-logo">
+                <span class="logo-text">Ademar Jr.</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">Início</a>
+                <a href="#about" class="nav-link" data-section="about">Sobre</a>
+                <a href="#skills" class="nav-link" data-section="skills">Habilidades</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projetos</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contato</a>
+            </div>
+            
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+                    <i data-lucide="sun" class="theme-icon sun-icon"></i>
+                    <i data-lucide="moon" class="theme-icon moon-icon"></i>
+                </button>
+                
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Menu mobile">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
     </nav>
-  </header>
-
-  <!-- Sobre -->
-  <section id="sobre" class="max-w-4xl mx-auto py-12 px-6">
-    <h2 class="text-3xl font-semibold mb-4">👨‍💻 Sobre Mim</h2>
-    <p class="text-lg leading-relaxed">Sou desenvolvedor e servidor público federal no Ifes campus Aracruz, com forte atuação em sistemas acadêmicos, automações administrativas e integrações de APIs. Experiência em backend com Django, frontend moderno e deploy em nuvem.</p>
-  </section>
-
-  <!-- Habilidades -->
-  <section id="habilidades" class="bg-white py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-semibold mb-4">🛠️ Habilidades</h2>
-      <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg list-disc list-inside">
-        <li>Python / Django</li>
-        <li>JavaScript / Tailwind</li>
-        <li>Git / GitHub</li>
-        <li>APIs REST / JSON</li>
-        <li>Docker / Linux</li>
-        <li>PostgreSQL / MySQL</li>
-      </ul>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-up" data-aos-delay="300">
+                    <h1 class="hero-title">
+                        Olá, eu sou <br>
+                        <span class="hero-name" id="typed-name"></span>
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="500">
+                        Desenvolvedor Full Stack especializado em 
+                        <span class="highlight">soluções web</span>, 
+                        <span class="highlight">APIs</span> e 
+                        <span class="highlight">integrações</span>
+                    </p>
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="700">
+                        <a href="#projects" class="btn btn-primary">
+                            <i data-lucide="code" class="btn-icon"></i>
+                            Ver Projetos
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i data-lucide="mail" class="btn-icon"></i>
+                            Entrar em Contato
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
+                    <div class="hero-avatar">
+                        <div class="avatar-bg"></div>
+                        <div class="avatar-content">
+                            <i data-lucide="user" class="avatar-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span class="scroll-text">Role para baixo</span>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">
+                        <i data-lucide="user-circle" class="section-icon"></i>
+                        Sobre Mim
+                    </h2>
+                    <p class="section-subtitle">Conheça minha trajetória e experiência</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <p class="about-description">
+                            Sou desenvolvedor e servidor público federal no <strong>Ifes campus Aracruz</strong>, 
+                            com forte atuação em sistemas acadêmicos, automações administrativas e integrações de APIs. 
+                            Tenho experiência sólida em backend com <strong>Django</strong>, frontend moderno e 
+                            deploy em nuvem.
+                        </p>
+                        
+                        <p class="about-description">
+                            Minha paixão é criar soluções tecnológicas que realmente fazem a diferença, 
+                            combinando código limpo, performance otimizada e experiência do usuário excepcional.
+                        </p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Anos de Experiência</div>
+                            </div>
+                            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="stat-number">20+</div>
+                                <div class="stat-label">Projetos Concluídos</div>
+                            </div>
+                            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">Tecnologias</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-image" data-aos="fade-left">
+                        <div class="about-card">
+                            <div class="card-content">
+                                <i data-lucide="code-2" class="card-icon"></i>
+                                <h3 class="card-title">Desenvolvedor Full Stack</h3>
+                                <p class="card-description">
+                                    Especialista em criar soluções completas, do backend ao frontend
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">
+                        <i data-lucide="settings" class="section-icon"></i>
+                        Habilidades
+                    </h2>
+                    <p class="section-subtitle">Tecnologias e ferramentas que domino</p>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="category-title">
+                            <i data-lucide="server" class="category-icon"></i>
+                            Backend
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python / Django</span>
+                                    <span class="skill-level">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">APIs REST</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">PostgreSQL / MySQL</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="category-title">
+                            <i data-lucide="monitor" class="category-icon"></i>
+                            Frontend
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Tailwind CSS</span>
+                                    <span class="skill-level">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5 / CSS3</span>
+                                    <span class="skill-level">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="category-title">
+                            <i data-lucide="tools" class="category-icon"></i>
+                            Ferramentas
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Git / GitHub</span>
+                                    <span class="skill-level">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Docker</span>
+                                    <span class="skill-level">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Linux</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">
+                        <i data-lucide="folder" class="section-icon"></i>
+                        Projetos
+                    </h2>
+                    <p class="section-subtitle">Alguns dos meus trabalhos mais recentes</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://musical-notes.netlify.app/" target="_blank" rel="noopener" class="project-link" aria-label="Ver projeto">
+                                        <i data-lucide="external-link"></i>
+                                    </a>
+                                    <a href="https://github.com/ademarcandeias" target="_blank" rel="noopener" class="project-link" aria-label="Ver código">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-bg">
+                                <i data-lucide="music" class="project-icon"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Musical Notes</h3>
+                            <p class="project-description">
+                                Visualização interativa de notas musicais com interface moderna. 
+                                Criado com HTML5, JavaScript e bibliotecas de áudio avançadas.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">HTML5</span>
+                                <span class="project-tag">CSS3</span>
+                                <span class="project-tag">Web Audio API</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://github.com/ademarcandeias" target="_blank" rel="noopener" class="project-link" aria-label="Ver projeto">
+                                        <i data-lucide="external-link"></i>
+                                    </a>
+                                    <a href="https://github.com/ademarcandeias" target="_blank" rel="noopener" class="project-link" aria-label="Ver código">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-bg">
+                                <i data-lucide="graduation-cap" class="project-icon"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Sistema Acadêmico Django</h3>
+                            <p class="project-description">
+                                Sistema completo para gestão acadêmica com integrações de APIs, 
+                                autenticação robusta e visualização avançada de dados escolares.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Django</span>
+                                <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">REST API</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="Ver projeto">
+                                        <i data-lucide="external-link"></i>
+                                    </a>
+                                    <a href="https://github.com/ademarcandeias" target="_blank" rel="noopener" class="project-link" aria-label="Ver código">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-bg">
+                                <i data-lucide="globe" class="project-icon"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Portfólio Moderno</h3>
+                            <p class="project-description">
+                                Este próprio portfólio, desenvolvido com tecnologias modernas, 
+                                animações impressionantes e design responsivo.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">HTML5</span>
+                                <span class="project-tag">CSS3</span>
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">GSAP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section section-alt">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">
+                        <i data-lucide="mail" class="section-icon"></i>
+                        Contato
+                    </h2>
+                    <p class="section-subtitle">Vamos trabalhar juntos em seu próximo projeto</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h3 class="contact-title">Entre em contato</h3>
+                        <p class="contact-description">
+                            Estou sempre aberto a novas oportunidades e projetos interessantes. 
+                            Vamos conversar sobre como posso ajudar você!
+                        </p>
+                        
+                        <div class="contact-methods">
+                            <a href="mailto:ademarcandeias@gmail.com" class="contact-method">
+                                <div class="method-icon">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">Email</span>
+                                    <span class="method-value">ademarcandeias@gmail.com</span>
+                                </div>
+                            </a>
+                            
+                            <a href="https://wa.me/5527997164474" target="_blank" rel="noopener" class="contact-method">
+                                <div class="method-icon">
+                                    <i data-lucide="phone"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">WhatsApp</span>
+                                    <span class="method-value">+55 27 99716-4474</span>
+                                </div>
+                            </a>
+                            
+                            <a href="https://linkedin.com/in/ademarcandeias" target="_blank" rel="noopener" class="contact-method">
+                                <div class="method-icon">
+                                    <i data-lucide="linkedin"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">LinkedIn</span>
+                                    <span class="method-value">ademarcandeias</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" data-aos="fade-left" id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                            <div class="form-error" id="name-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <div class="form-error" id="email-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Assunto</label>
+                            <input type="text" id="subject" name="subject" class="form-input" required>
+                            <div class="form-error" id="subject-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensagem</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                            <div class="form-error" id="message-error"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i data-lucide="send" class="btn-icon"></i>
+                            <span class="btn-text">Enviar Mensagem</span>
+                            <div class="btn-loading">
+                                <div class="loading-spinner-small"></div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 class="footer-title">Ademar G. C. Jr.</h3>
+                    <p class="footer-description">
+                        Desenvolvedor Full Stack apaixonado por criar soluções inovadoras
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-subtitle">Links Rápidos</h4>
+                    <nav class="footer-nav">
+                        <a href="#home" class="footer-link">Início</a>
+                        <a href="#about" class="footer-link">Sobre</a>
+                        <a href="#skills" class="footer-link">Habilidades</a>
+                        <a href="#projects" class="footer-link">Projetos</a>
+                        <a href="#contact" class="footer-link">Contato</a>
+                    </nav>
+                </div>
+                
+                <div class="footer-social">
+                    <h4 class="footer-subtitle">Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/ademarcandeias" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                            <i data-lucide="github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/ademarcandeias" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="https://wa.me/5527997164474" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
+                            <i data-lucide="phone"></i>
+                        </a>
+                        <a href="mailto:ademarcandeias@gmail.com" class="social-link" aria-label="Email">
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Ademar G. C. Jr. Todos os direitos reservados.
+                </p>
+                <p class="footer-made">
+                    Feito com <i data-lucide="heart" class="heart-icon"></i> e muito código
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/5527997164474" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="WhatsApp">
+            <i data-lucide="phone"></i>
+        </a>
+        
+        <button id="scroll-to-top" class="fab fab-scroll-top" aria-label="Voltar ao topo">
+            <i data-lucide="arrow-up"></i>
+        </button>
     </div>
-  </section>
-
-  <!-- Projetos -->
-  <section id="projetos" class="bg-gray-100 py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-semibold mb-6">📁 Projetos</h2>
-
-      <div class="mb-8">
-        <h3 class="text-xl font-bold">
-          <a href="https://musical-notes.netlify.app/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">🎵 Musical Notes</a>
-        </h3>
-        <p class="text-gray-700">Visualização interativa de notas musicais. Criado com HTML, JS e bibliotecas de áudio.</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-bold">
-          <a href="https://github.com/ademarcandeias/seu-projeto" target="_blank" rel="noopener" class="text-blue-600 hover:underline">📘 Sistema Acadêmico Django</a>
-        </h3>
-        <p class="text-gray-700">Sistema para gestão acadêmica, com integrações API, autenticação e visualização de dados escolares.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contato -->
-  <section id="contato" class="py-12 px-6 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-semibold mb-6">📞 Contato</h2>
-      <div class="flex justify-center space-x-6 text-2xl">
-        <a href="mailto:ademarcandeias@gmail.com" class="text-gray-600 hover:text-red-500 transition">
-          <i data-feather="mail"></i>
-        </a>
-        <a href="https://wa.me/5527997164474" target="_blank" rel="noopener" class="text-green-600 hover:text-green-800 transition">
-          <i data-feather="message-circle"></i>
-        </a>
-        <a href="https://github.com/ademarcandeias" target="_blank" rel="noopener" class="text-gray-700 hover:text-black transition">
-          <i data-feather="github"></i>
-        </a>
-        <a href="https://linkedin.com/in/ademarcandeias" target="_blank" rel="noopener" class="text-blue-700 hover:text-blue-900 transition">
-          <i data-feather="linkedin"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Botão Flutuante WhatsApp -->
-  <a href="https://wa.me/5527997164474" target="_blank" rel="noopener"
-     class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition"
-     aria-label="Fale no WhatsApp">
-    <i data-feather="phone-call"></i>
-  </a>
-
-  <!-- Botão Voltar ao Topo -->
-  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-    class="fixed bottom-6 right-20 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-md"
-    aria-label="Voltar ao topo">
-    <i data-feather="arrow-up"></i>
-  </button>
-
-  <!-- Rodapé -->
-  <footer class="bg-gray-900 text-center text-gray-400 py-4 mt-10">
-    <p>© 2025 Ademar_Jr. Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    feather.replace(); // Ativa os ícones Feather
-  </script>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/utils.js"></script>
 </body>
 </html>
+
