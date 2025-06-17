@@ -1,666 +1,405 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ademar G. C. Jr. - Desenvolvedor Full Stack especializado em soluções web, APIs e integrações. Portfólio profissional com projetos e experiências.">
-    <meta name="keywords" content="desenvolvedor, full stack, python, django, javascript, web development, APIs">
-    <meta name="author" content="Ademar G. C. Jr.">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ademarcandeias.github.io/">
-    <meta property="og:title" content="Ademar G. C. Jr. | Desenvolvedor Full Stack">
-    <meta property="og:description" content="Desenvolvedor Full Stack especializado em soluções web, APIs e integrações">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ademarcandeias.github.io/">
-    <meta property="twitter:title" content="Ademar G. C. Jr. | Desenvolvedor Full Stack">
-    <meta property="twitter:description" content="Desenvolvedor Full Stack especializado em soluções web, APIs e integrações">
-    
-    <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#3b82f6">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Ademar Jr.">
-    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMzYjgyZjYiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CjxwYXRoIGQ9Im0xNiAxNiA0LTQtNC00Ii8+CjxwYXRoIGQ9Im04IDEyaDgiLz4KPC9zdmc+Cjwvc3ZnPgo=">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzNiODJmNiIvPgo8cGF0aCBkPSJNMTYgOEwxNiAyNCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTggMTZMMjQgMTYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=">
-    
-    <title>Ademar G. C. Jr. | Desenvolvedor Full Stack</title>
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                        'mono': ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        primary: {
-                            50: '#eff6ff',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                        }
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.6s ease-out',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'slide-down': 'slideDown 0.6s ease-out',
-                        'scale-in': 'scaleIn 0.4s ease-out',
-                        'bounce-slow': 'bounce 2s infinite',
-                        'pulse-slow': 'pulse 3s infinite',
-                        'float': 'float 3s ease-in-out infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        slideDown: {
-                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        scaleIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.9)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        glow: {
-                            '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' },
-                            '100%': { boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- External Libraries -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/themes.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio Moderno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #102820;
+      --secondary: #2af598;
+      --bg: #0a1813;
+      --text: #e6ffe6;
+      --card: #142d23;
+      --shadow: 0 4px 24px rgba(16,40,32,0.13);
+      --radius: 18px;
+      --transition: 0.3s cubic-bezier(.4,0,.2,1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+    header {
+      position: relative;
+      background: none;
+      min-height: 260px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+    .header-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    #bg-canvas {
+      width: 100vw;
+      height: 100%;
+      display: block;
+      background: linear-gradient(120deg, #102820 60%, #2af598 100%);
+      opacity: 0.97;
+    }
+    .header-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      padding: 2.2rem 0 1.2rem 0;
+    }
+    .header-content h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.1rem;
+      color: #2af598;
+      text-shadow: 0 2px 16px #10282099;
+    }
+    .header-content p {
+      font-size: 1.1rem;
+      color: #baffc9;
+      font-weight: 400;
+      margin-bottom: 0.2rem;
+      text-shadow: 0 1px 8px #10282055;
+    }
+    .header-content nav {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 0.2rem;
+    }
+    .header-content nav a {
+      color: #2af598;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.08rem;
+      padding: 0.4rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(42,245,152,0.07);
+      transition: background 0.3s, color 0.3s, transform 0.3s;
+      box-shadow: 0 1px 8px #2af59822;
+    }
+    .header-content nav a:hover {
+      background: #2af598;
+      color: #102820;
+      transform: scale(1.08);
+    }
+    main {
+      max-width: 900px;
+      margin: 2.5rem auto 0 auto;
+      padding: 0 1.2rem 2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    section {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.2rem 2rem 2rem 2rem;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    section:hover {
+      box-shadow: 0 8px 32px rgba(42,245,152,0.13);
+      transform: translateY(-2px) scale(1.01);
+    }
+    h2 {
+      color: var(--secondary);
+      font-size: 2rem;
+      margin-bottom: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-shadow: 0 1px 8px #10282055;
+    }
+    .sobre {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    .sobre img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--secondary);
+      margin-bottom: 0.5rem;
+      box-shadow: 0 2px 12px rgba(42,245,152,0.10);
+      align-self: center;
+    }
+    .sobre strong {
+      font-size: 1.2rem;
+      color: var(--secondary);
+    }
+    .habilidades-lista {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      margin-top: 0.5rem;
+    }
+    .habilidade {
+      background: linear-gradient(90deg, var(--secondary) 0%, #0be881 100%);
+      color: #102820;
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(42,245,152,0.10);
+      transition: background var(--transition), transform var(--transition);
+      cursor: default;
+    }
+    .habilidade:hover {
+      background: linear-gradient(90deg, #0be881 0%, var(--secondary) 100%);
+      transform: scale(1.07);
+    }
+    .projetos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    .projeto-card {
+      background: #183c2b;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px rgba(16,40,32,0.13);
+      padding: 1.3rem 1.1rem 1.1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .projeto-card:hover {
+      box-shadow: 0 6px 24px rgba(42,245,152,0.13);
+      transform: translateY(-2px) scale(1.03);
+    }
+    .projeto-card h3 {
+      font-size: 1.15rem;
+      color: var(--secondary);
+      font-weight: 700;
+    }
+    .projeto-card p {
+      font-size: 0.98rem;
+      color: #baffc9;
+      flex: 1;
+    }
+    .projeto-links {
+      margin-top: 0.3rem;
+      display: flex;
+      gap: 1.1rem;
+    }
+    .projeto-links a {
+      color: var(--secondary);
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color var(--transition);
+      position: relative;
+    }
+    .projeto-links a:hover {
+      color: #0be881;
+    }
+    .contato-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 0.7rem;
+      flex-wrap: wrap;
+    }
+    .contato-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color var(--transition), transform var(--transition);
+      border-radius: 999px;
+      padding: 0.5rem 1.1rem;
+      background: #183c2b;
+      box-shadow: 0 1px 6px rgba(42,245,152,0.07);
+    }
+    .contato-link:hover {
+      color: #102820;
+      background: var(--secondary);
+      transform: scale(1.07);
+    }
+    .contato-link svg {
+      width: 1.3em;
+      height: 1.3em;
+      vertical-align: middle;
+    }
+    @media (max-width: 700px) {
+      main { padding: 0 0.3rem; }
+      section { padding: 1.3rem 0.7rem; }
+      .header-content h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.3rem; }
+      .header-content nav { gap: 0.5rem; }
+    }
+    @media (max-width: 500px) {
+      .projetos-grid { grid-template-columns: 1fr; }
+      .contato-links { flex-direction: column; gap: 0.7rem; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden">
-    
-    <!-- Custom Cursor -->
-    <div id="cursor" class="cursor"></div>
-    <div id="cursor-follower" class="cursor-follower"></div>
-    
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading-content">
-            <div class="loading-spinner"></div>
-            <h2 class="loading-text">Carregando...</h2>
-            <div class="loading-progress">
-                <div class="loading-bar"></div>
-            </div>
-        </div>
+<body>
+  <header>
+    <div class="header-bg">
+      <canvas id="bg-canvas"></canvas>
     </div>
+    <div class="header-content">
+      <h1>Ademar G. C. Jr.</h1>
+      <p>Desenvolvedor Full Stack & UI Designer</p>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="sobre" class="sobre">
+      <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Foto de perfil">
+      <div>
+        <strong>Olá! Eu sou Ademar</strong>
+        <p>Sou servidor público federal no Ifes – Campus Aracruz, atuando na área de registros acadêmicos e desenvolvimento de soluções digitais.
+
+          Sou apaixonado por tecnologia, design e experiências digitais. Desenvolvo interfaces modernas, acessíveis e responsivas, com foco em usabilidade, performance e boas práticas.
+          
+          Tenho experiência com desenvolvimento web (Django, HTML, CSS, JS), integração de APIs e criação de sistemas eficientes e intuitivos.
+          
+          👨‍💻 Vamos construir algo útil, inteligente e bem feito?</p>
+      </div>
+    </section>
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <div class="habilidades-lista">
+        <span class="habilidade">HTML5</span>
+        <span class="habilidade">CSS3</span>
+        <span class="habilidade">JavaScript</span>
+        <span class="habilidade">React</span>
+        <span class="habilidade">Python</span>
+        <span class="habilidade">Django</span>
+        <span class="habilidade">APIs REST</span>
+        <span class="habilidade">Git</span>
+        <span class="habilidade">Acessibilidade</span>
+        <span class="habilidade">UI/UX</span>
+        <span class="habilidade">Figma</span>
+      </div>
+    </section>
     
-    <!-- Particles Background -->
-    <div id="particles-js" class="particles-container"></div>
-    
-    <!-- Navigation -->
-    <nav class="nav-container">
-        <div class="nav-content">
-            <div class="nav-logo">
-                <span class="logo-text">Ademar Jr.</span>
-            </div>
-            
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active" data-section="home">Início</a>
-                <a href="#about" class="nav-link" data-section="about">Sobre</a>
-                <a href="#skills" class="nav-link" data-section="skills">Habilidades</a>
-                <a href="#projects" class="nav-link" data-section="projects">Projetos</a>
-                <a href="#contact" class="nav-link" data-section="contact">Contato</a>
-            </div>
-            
-            <div class="nav-controls">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
-                    <i data-lucide="sun" class="theme-icon sun-icon"></i>
-                    <i data-lucide="moon" class="theme-icon moon-icon"></i>
-                </button>
-                
-                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Menu mobile">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+    <section id="projetos">
+      <h2>Projetos</h2>
+      <div class="projetos-grid">
+        <div class="projeto-card">
+          <h3>Musical Notes</h3>
+          <p>Site para estudo musical com player integrado e layout responsivo. Criado com foco em experiência do usuário.</p>
+          <div class="projeto-links">
+            <a href="https://musical-notes.netlify.app" target="_blank">Ver Projeto</a>
+            <a href="https://github.com/scatrus/music-notes" target="_blank">GitHub</a>
+          </div>
         </div>
-    </nav>
-    
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <div class="hero-text" data-aos="fade-up" data-aos-delay="300">
-                    <h1 class="hero-title">
-                        Olá, eu sou <br>
-                        <span class="hero-name" id="typed-name"></span>
-                    </h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="500">
-                        Desenvolvedor Full Stack especializado em 
-                        <span class="highlight">soluções web</span>, 
-                        <span class="highlight">APIs</span> e 
-                        <span class="highlight">integrações</span>
-                    </p>
-                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="700">
-                        <a href="#projects" class="btn btn-primary">
-                            <i data-lucide="code" class="btn-icon"></i>
-                            Ver Projetos
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <i data-lucide="mail" class="btn-icon"></i>
-                            Entrar em Contato
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
-                    <div class="hero-avatar">
-                        <div class="avatar-bg"></div>
-                        <div class="avatar-content">
-                            <i data-lucide="user" class="avatar-icon"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
-                <div class="scroll-mouse">
-                    <div class="scroll-wheel"></div>
-                </div>
-                <span class="scroll-text">Role para baixo</span>
-            </div>
-        </section>
-        
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2 class="section-title">
-                        <i data-lucide="user-circle" class="section-icon"></i>
-                        Sobre Mim
-                    </h2>
-                    <p class="section-subtitle">Conheça minha trajetória e experiência</p>
-                </div>
-                
-                <div class="about-content">
-                    <div class="about-text" data-aos="fade-right">
-                        <p class="about-description" style="color: #111 !important; background: #fff !important;">Texto de teste</p>
-                        
-                        <p class="about-description">
-                            Sou desenvolvedor e servidor público federal no <strong>Ifes campus Aracruz</strong>, 
-                            com forte atuação em sistemas acadêmicos, automações administrativas e integrações de APIs. 
-                            Tenho experiência sólida em backend com <strong>Django</strong>, frontend moderno e 
-                            deploy em nuvem.
-                        </p>
-                        
-                        <p class="about-description">
-                            Minha paixão é criar soluções tecnológicas que realmente fazem a diferença, 
-                            combinando código limpo, performance otimizada e experiência do usuário excepcional.
-                        </p>
-                        
-                        <div class="about-stats">
-                            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                                <div class="stat-number">5+</div>
-                                <div class="stat-label">Anos de Experiência</div>
-                            </div>
-                            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                                <div class="stat-number">20+</div>
-                                <div class="stat-label">Projetos Concluídos</div>
-                            </div>
-                            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                                <div class="stat-number">10+</div>
-                                <div class="stat-label">Tecnologias</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="about-image" data-aos="fade-left">
-                        <div class="about-card">
-                            <div class="card-content">
-                                <i data-lucide="code-2" class="card-icon"></i>
-                                <h3 class="card-title">Desenvolvedor Full Stack</h3>
-                                <p class="card-description">
-                                    Especialista em criar soluções completas, do backend ao frontend
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Skills Section -->
-        <section id="skills" class="section section-alt">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2 class="section-title">
-                        <i data-lucide="settings" class="section-icon"></i>
-                        Habilidades
-                    </h2>
-                    <p class="section-subtitle">Tecnologias e ferramentas que domino</p>
-                </div>
-                
-                <div class="skills-grid">
-                    <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="category-title">
-                            <i data-lucide="server" class="category-icon"></i>
-                            Backend
-                        </h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Python / Django</span>
-                                    <span class="skill-level">90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">APIs REST</span>
-                                    <span class="skill-level">85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">PostgreSQL / MySQL</span>
-                                    <span class="skill-level">80%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="80"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="category-title">
-                            <i data-lucide="monitor" class="category-icon"></i>
-                            Frontend
-                        </h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">JavaScript</span>
-                                    <span class="skill-level">85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Tailwind CSS</span>
-                                    <span class="skill-level">90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">HTML5 / CSS3</span>
-                                    <span class="skill-level">95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="95"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="category-title">
-                            <i data-lucide="tools" class="category-icon"></i>
-                            Ferramentas
-                        </h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Git / GitHub</span>
-                                    <span class="skill-level">90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Docker</span>
-                                    <span class="skill-level">75%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="75"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Linux</span>
-                                    <span class="skill-level">80%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="80"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2 class="section-title">
-                        <i data-lucide="folder" class="section-icon"></i>
-                        Projetos
-                    </h2>
-                    <p class="section-subtitle">Alguns dos meus trabalhos mais recentes</p>
-                </div>
-                
-                <div class="projects-grid">
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://musical-notes.netlify.app/" target="_blank" rel="noopener" class="project-link" aria-label="Ver projeto">
-                                        <i data-lucide="external-link"></i>
-                                    </a>
-                                    <a href="https://github.com/ademarcandeias" target="_blank" rel="noopener" class="project-link" aria-label="Ver código">
-                                        <i data-lucide="github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-bg">
-                                <i data-lucide="music" class="project-icon"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Musical Notes</h3>
-                            <p class="project-description">
-                                Visualização interativa de notas musicais com interface moderna. 
-                                Criado com HTML5, JavaScript e bibliotecas de áudio avançadas.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">HTML5</span>
-                                <span class="project-tag">CSS3</span>
-                                <span class="project-tag">Web Audio API</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://github.com/ademarcandeias" target="_blank" rel="noopener" class="project-link" aria-label="Ver projeto">
-                                        <i data-lucide="external-link"></i>
-                                    </a>
-                                    <a href="https://github.com/ademarcandeias" target="_blank" rel="noopener" class="project-link" aria-label="Ver código">
-                                        <i data-lucide="github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-bg">
-                                <i data-lucide="graduation-cap" class="project-icon"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Sistema Acadêmico Django</h3>
-                            <p class="project-description">
-                                Sistema completo para gestão acadêmica com integrações de APIs, 
-                                autenticação robusta e visualização avançada de dados escolares.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">Django</span>
-                                <span class="project-tag">PostgreSQL</span>
-                                <span class="project-tag">REST API</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="Ver projeto">
-                                        <i data-lucide="external-link"></i>
-                                    </a>
-                                    <a href="https://github.com/ademarcandeias" target="_blank" rel="noopener" class="project-link" aria-label="Ver código">
-                                        <i data-lucide="github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-bg">
-                                <i data-lucide="globe" class="project-icon"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Portfólio Moderno</h3>
-                            <p class="project-description">
-                                Este próprio portfólio, desenvolvido com tecnologias modernas, 
-                                animações impressionantes e design responsivo.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">HTML5</span>
-                                <span class="project-tag">CSS3</span>
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">GSAP</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Contact Section -->
-        <section id="contact" class="section section-alt">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2 class="section-title">
-                        <i data-lucide="mail" class="section-icon"></i>
-                        Contato
-                    </h2>
-                    <p class="section-subtitle">Vamos trabalhar juntos em seu próximo projeto</p>
-                </div>
-                
-                <div class="contact-content">
-                    <div class="contact-info" data-aos="fade-right">
-                        <h3 class="contact-title">Entre em contato</h3>
-                        <p class="contact-description">
-                            Estou sempre aberto a novas oportunidades e projetos interessantes. 
-                            Vamos conversar sobre como posso ajudar você!
-                        </p>
-                        
-                        <div class="contact-methods">
-                            <a href="mailto:ademarcandeias@gmail.com" class="contact-method">
-                                <div class="method-icon">
-                                    <i data-lucide="mail"></i>
-                                </div>
-                                <div class="method-info">
-                                    <span class="method-label">Email</span>
-                                    <span class="method-value">ademarcandeias@gmail.com</span>
-                                </div>
-                            </a>
-                            
-                            <a href="https://wa.me/5527997164474" target="_blank" rel="noopener" class="contact-method">
-                                <div class="method-icon">
-                                    <i data-lucide="phone"></i>
-                                </div>
-                                <div class="method-info">
-                                    <span class="method-label">WhatsApp</span>
-                                    <span class="method-value">+55 27 99716-4474</span>
-                                </div>
-                            </a>
-                            
-                            <a href="https://linkedin.com/in/ademarcandeias" target="_blank" rel="noopener" class="contact-method">
-                                <div class="method-icon">
-                                    <i data-lucide="linkedin"></i>
-                                </div>
-                                <div class="method-info">
-                                    <span class="method-label">LinkedIn</span>
-                                    <span class="method-value">ademarcandeias</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <form class="contact-form" data-aos="fade-left" id="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Nome</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
-                            <div class="form-error" id="name-error"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                            <div class="form-error" id="email-error"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Assunto</label>
-                            <input type="text" id="subject" name="subject" class="form-input" required>
-                            <div class="form-error" id="subject-error"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Mensagem</label>
-                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
-                            <div class="form-error" id="message-error"></div>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <i data-lucide="send" class="btn-icon"></i>
-                            <span class="btn-text">Enviar Mensagem</span>
-                            <div class="btn-loading">
-                                <div class="loading-spinner-small"></div>
-                            </div>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3 class="footer-title">Ademar G. C. Jr.</h3>
-                    <p class="footer-description">
-                        Desenvolvedor Full Stack apaixonado por criar soluções inovadoras
-                    </p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 class="footer-subtitle">Links Rápidos</h4>
-                    <nav class="footer-nav">
-                        <a href="#home" class="footer-link">Início</a>
-                        <a href="#about" class="footer-link">Sobre</a>
-                        <a href="#skills" class="footer-link">Habilidades</a>
-                        <a href="#projects" class="footer-link">Projetos</a>
-                        <a href="#contact" class="footer-link">Contato</a>
-                    </nav>
-                </div>
-                
-                <div class="footer-social">
-                    <h4 class="footer-subtitle">Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="https://github.com/scatrus" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
-                            <i data-lucide="github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/ademarcandeias" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-                            <i data-lucide="linkedin"></i>
-                        </a>
-                        <a href="https://wa.me/5527997164474" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
-                            <i data-lucide="phone"></i>
-                        </a>
-                        <a href="mailto:ademarcandeias@gmail.com" class="social-link" aria-label="Email">
-                            <i data-lucide="mail"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2025 Ademar G. C. Jr. Todos os direitos reservados.
-                </p>
-                <p class="footer-made">
-                    Feito com <i data-lucide="heart" class="heart-icon"></i> e muito código
-                </p>
-            </div>
+        <div class="projeto-card">
+          <h3>SAARA - Suporte Avançado e Automação de Registros Acadêmicos</h3>
+          <p>Integração com API acadêmica para consulta de dados de alunos, utilizando Django, autenticação JWT e rotas protegidas.</p>
+          <div class="projeto-links">
+            Uso interno no Ifes – Campus Aracruz
+          </div>
         </div>
-    </footer>
+        <div class="projeto-card">
+          <h3>Portfólio Minimalista</h3>
+          <p>Portfólio pessoal desenvolvido com HTML, CSS e JS. Navegação intuitiva, microinterações e design centrado no conteúdo.</p>
+          <div class="projeto-links">
+            <a href="#" target="_blank">Ver Projeto</a>
+            <a href="https://github.com/scatrus/site" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
     
-    <!-- Floating Action Buttons -->
-    <div class="floating-buttons">
-        <a href="https://wa.me/5527997164474" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="WhatsApp">
-            <i data-lucide="phone"></i>
+    <section id="contato">
+      <h2>Contato</h2>
+      <div class="contato-links">
+        <a class="contato-link" href="https://wa.me/5527997164474" target="_blank" title="WhatsApp">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A12.07 12.07 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.62A12.07 12.07 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.69.96.99-3.59-.24-.37A9.94 9.94 0 0 1 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.6c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.18.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.62-.47-.16-.01-.36-.01-.56-.01-.19 0-.5.07-.76.34-.26.27-1 1-.99 2.43.01 1.43 1.03 2.81 1.18 3 .15.19 2.03 3.1 4.93 4.23.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg>
+          WhatsApp
         </a>
-        
-        <button id="scroll-to-top" class="fab fab-scroll-top" aria-label="Voltar ao topo">
-            <i data-lucide="arrow-up"></i>
-        </button>
-    </div>
-    
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/theme-toggle.js"></script>
-    <script src="js/utils.js"></script>
+        <a class="contato-link" href="mailto:ademarcandeias@gmail.com" target="_blank" title="E-mail">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 13.065L.8 6.2V18a2 2 0 0 0 2 2h18.4a2 2 0 0 0 2-2V6.2l-11.2 6.865zm10.4-9.065H1.6a2 2 0 0 0-2 2l10.4 6.385a1 1 0 0 0 1 0L22.4 6a2 2 0 0 0-2-2z"/></svg>
+          E-mail
+        </a>
+        <a class="contato-link" href="https://github.com/scatrus" target="_blank" title="GitHub">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.263.82-.582 0-.288-.012-1.243-.018-2.25-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.606-2.665-.304-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 3-.404c1.02.005 2.05.138 3 .404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.803 5.624-5.475 5.92.43.37.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.699.825.58C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a class="contato-link" href="https://linkedin.com/in/ademarcandeias" target="_blank" title="LinkedIn">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.75 20h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm15.25 11.25h-3v-5.5c0-1.32-.03-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9v5.6h-3v-10h2.89v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer style="text-align:center; color:#64748b; font-size:0.98rem; margin-bottom:1.2rem; margin-top:1.5rem; opacity:0.7;">
+    &copy; 2025 Ademar G. C. Jr. Todos os direitos reservados.
+  </footer>
+  <script>
+    // Fundo interativo: partículas animadas em tons de verde
+    const canvas = document.getElementById('bg-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let w = window.innerWidth;
+      let h = 260;
+      canvas.width = w;
+      canvas.height = h;
+      let particles = Array.from({length: 38}, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: 1.7 + Math.random() * 2.5,
+        dx: -0.5 + Math.random(),
+        dy: -0.5 + Math.random(),
+        c: `rgba(${16+Math.floor(Math.random()*30)},${120+Math.floor(Math.random()*120)},${60+Math.floor(Math.random()*60)},${0.18 + Math.random() * 0.22})`
+      }));
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+        for (let p of particles) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+          ctx.fillStyle = p.c;
+          ctx.fill();
+        }
+        update();
+        requestAnimationFrame(draw);
+      }
+      function update() {
+        for (let p of particles) {
+          p.x += p.dx;
+          p.y += p.dy;
+          if (p.x < 0 || p.x > w) p.dx *= -1;
+          if (p.y < 0 || p.y > h) p.dy *= -1;
+        }
+      }
+      draw();
+      window.addEventListener('resize', () => {
+        w = window.innerWidth;
+        canvas.width = w;
+      });
+    }
+  </script>
 </body>
 </html>
 
