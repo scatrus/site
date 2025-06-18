@@ -44,12 +44,7 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-    }
-    #bg-canvas {
-      width: 100vw;
-      height: 100%;
-      display: block;
-      background: linear-gradient(120deg, #102820 60%, #2af598 100%);
+      background: url('fundo.png') center center/cover no-repeat;
       opacity: 0.97;
     }
     .header-content {
@@ -258,9 +253,7 @@
 </head>
 <body>
   <header>
-    <div class="header-bg">
-      <canvas id="bg-canvas"></canvas>
-    </div>
+    <div class="header-bg"></div>
     <div class="header-content">
       <h1>Ademar G. C. Jr.</h1>
       <p>Desenvolvedor Full Stack & UI Designer</p>
@@ -402,4 +395,3 @@
   </script>
 </body>
 </html>
-
