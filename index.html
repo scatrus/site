@@ -1,98 +1,229 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ademar G. C. Jr. | Page</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/themes.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="icon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
-</head>
-<body>
-  <header class="header">
-    <div class="header-bg"></div>
-    <div class="header-content">
-      <h1>Ademar G. C. Jr.</h1>
-      <p>Desenvolvedor Full Stack & UI Designer</p>
-      <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <section id="sobre" class="sobre">
-      <img src="assets/img/foto.jpeg" alt="Foto de perfil" class="foto-perfil">
-      <div>
-        <strong>Olá! Eu sou Ademar</strong>
-        <p>Sou servidor público federal no Ifes – Campus Aracruz, atuando na área de registros acadêmicos e desenvolvimento de soluções digitais.<br><br>
-        Sou apaixonado por tecnologia, design e experiências digitais. Desenvolvo interfaces modernas, acessíveis e responsivas, com foco em usabilidade, performance e boas práticas.<br><br>
-        Tenho experiência com desenvolvimento web (Django, HTML, CSS, JS), integração de APIs e criação de sistemas eficientes e intuitivos.<br><br>
-        👨‍💻 Vamos construir algo útil, inteligente e bem feito?</p>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ademar G. C. Jr.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            animation: {
+              fadeIn: 'fadeIn 1s ease-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0, transform: 'translateY(10px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+            },
+            colors: {
+              base: '#f8fafc',
+              darkbg: '#0f172a',
+              darktext: '#e2e8f0'
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-image: url('/assets/img/fundo_claro.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-color: #f8fafc;
+      }
+      .dark body, body.dark {
+        background-image: url('/assets/img/fundo.png') !important;
+        background-color: #0f172a !important;
+      }
+    </style>
+  </head>
+  <body class="relative bg-base dark:bg-darkbg text-gray-800 dark:text-darktext transition-colors duration-300">
+
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-emerald-500 z-50" style="width: 0%;"></div>
+
+    <!-- Menu lateral flutuante -->
+    <aside class="fixed top-1/2 left-2 md:left-4 -translate-y-1/2 z-50 flex flex-col items-center space-y-3">
+      <a href="#sobre" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Sobre</a>
+      <a href="#habilidades" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Habilidades</a>
+      <a href="#projetos" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Projetos</a>
+      <a href="#contato" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Contato</a>
+      <button id="theme-toggle" class="mt-4 bg-white dark:bg-gray-700 text-black dark:text-white p-2 rounded-full shadow-lg hover:ring-2 hover:ring-emerald-500 transition" title="Alternar tema">🌓</button>
+    </aside>
+
+    <!-- Botão voltar ao topo -->
+    <a href="#topo" class="fixed bottom-6 right-4 md:right-6 bg-emerald-600 text-white p-3 rounded-full shadow-xl hover:bg-emerald-700 transition transform hover:scale-110 z-50" title="Voltar ao topo">
+      ↑
+    </a>
+
+    <!-- Header -->
+    <header id="topo" class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 animate-fadeIn">
+      <div class="absolute inset-0 bg-black/50 dark:bg-black/80 backdrop-blur-sm z-0"></div>
+      <div class="relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold text-white drop-shadow-md">Ademar G. C. Jr.</h1>
+        <p class="text-lg md:text-xl text-gray-100 mt-4">Desenvolvedor Full Stack & UI Designer</p>
       </div>
-    </section>
-    <section id="habilidades">
-      <h2>Habilidades</h2>
-      <div class="habilidades-lista">
-        <span class="habilidade">HTML5</span>
-        <span class="habilidade">CSS3</span>
-        <span class="habilidade">JavaScript</span>
-        <span class="habilidade">React</span>
-        <span class="habilidade">Python</span>
-        <span class="habilidade">Django</span>
-        <span class="habilidade">APIs REST</span>
-        <span class="habilidade">Git</span>
-        <span class="habilidade">Acessibilidade</span>
-        <span class="habilidade">UI/UX</span>
-        <span class="habilidade">Figma</span>
-      </div>
-    </section>
-    <section id="projetos">
-      <h2>Projetos</h2>
-      <div class="projetos-grid">
-        <div class="projeto-card">
-          <h3>Musical Notes</h3>
-          <p>Site para estudo musical com player integrado e layout responsivo. Criado com foco em experiência do usuário.</p>
-          <div class="projeto-links">
-            <a href="https://musical-notes.netlify.app" target="_blank">Ver Projeto</a>
-            <a href="https://github.com/scatrus/music-notes" target="_blank">GitHub</a>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-5xl mx-auto px-0 md:px-0 py-0 md:py-0">
+      <section id="sobre" class="min-h-screen flex flex-col justify-center items-center text-center px-6 py-16 md:py-24 bg-white/70 dark:bg-black/60 backdrop-blur-md shadow-lg border-b border-emerald-100 dark:border-emerald-900">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-emerald-700 dark:text-emerald-400">Sobre</h2>
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/img/foto.JPG" alt="Foto de perfil" class="w-40 h-40 object-cover rounded-full border-4 border-emerald-500 shadow-lg">
+          <div>
+            <p class="leading-relaxed text-justify text-gray-800 dark:text-gray-200">
+              Sou servidor público federal no Ifes – Campus Aracruz, atuando na área de registros acadêmicos e desenvolvimento de soluções digitais.<br><br>
+              Apaixonado por tecnologia, design e experiências digitais. Desenvolvo interfaces modernas, acessíveis e responsivas, com foco em usabilidade, performance e boas práticas.<br><br>
+              Tenho experiência com desenvolvimento web (Django, HTML, CSS, JS), integração de APIs e criação de sistemas eficientes e intuitivos.<br><br>
+              👨‍💻 Vamos construir algo útil, inteligente e bem feito?
+            </p>
           </div>
         </div>
-        <div class="projeto-card">
-          <h3>SAARA - Suporte Avançado e Automação de Registros Acadêmicos</h3>
-          <p>Integração com API acadêmica para consulta de dados de alunos, utilizando Django, autenticação JWT e rotas protegidas.</p>
-          <div class="projeto-links">
-            Uso interno no Ifes – Campus Aracruz
+      </section>
+      <section id="habilidades" class="min-h-screen flex flex-col justify-center items-center text-center px-6 py-16 md:py-24 bg-white/80 dark:bg-black/50 backdrop-blur-md shadow-lg border-b border-emerald-100 dark:border-emerald-900">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-emerald-700 dark:text-emerald-400">Habilidades</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 w-full max-w-3xl mx-auto">
+          <div class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-10 h-10 mb-2">
+            <span class="font-semibold">HTML5</span>
+          </div>
+          <div class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-10 h-10 mb-2">
+            <span class="font-semibold">CSS3</span>
+          </div>
+          <div class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-10 h-10 mb-2">
+            <span class="font-semibold">JavaScript</span>
+          </div>
+          <div class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-10 h-10 mb-2">
+            <span class="font-semibold">React</span>
+          </div>
+          <div class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-10 h-10 mb-2">
+            <span class="font-semibold">Python</span>
+          </div>
+          <div class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" class="w-10 h-10 mb-2 bg-white rounded">
+            <span class="font-semibold">Django</span>
+          </div>
+          <div class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-5">
+            <img src="https://img.icons8.com/external-outline-juicy-fish/60/10b981/external-api-coding-and-development-outline-outline-juicy-fish.png" alt="APIs REST" class="w-10 h-10 mb-2">
+            <span class="font-semibold">APIs REST</span>
+          </div>
+          <div class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-10 h-10 mb-2">
+            <span class="font-semibold">Git</span>
+          </div>
+          <div class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-5">
+            <img src="https://img.icons8.com/ios-filled/50/10b981/design--v1.png" alt="UI/UX" class="w-10 h-10 mb-2">
+            <span class="font-semibold">UI/UX</span>
           </div>
         </div>
-        <div class="projeto-card">
-          <h3>Portfólio Minimalista</h3>
-          <p>Portfólio pessoal desenvolvido com HTML, CSS e JS. Navegação intuitiva, microinterações e design centrado no conteúdo.</p>
-          <div class="projeto-links">
-            <a href="#" target="_blank">Ver Projeto</a>
-            <a href="https://github.com/scatrus/site" target="_blank">GitHub</a>
+      </section>
+      <section id="projetos" class="min-h-screen flex flex-col justify-center items-center text-center px-6 py-16 md:py-24 bg-white/90 dark:bg-black/40 backdrop-blur-md shadow-lg border-b border-emerald-100 dark:border-emerald-900">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-emerald-700 dark:text-emerald-400">Projetos</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow border border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg font-bold mb-2">Musical Notes</h3>
+            <p>Site para estudo musical com player integrado e layout responsivo.</p>
+            <div class="mt-4 flex gap-3">
+              <a href="https://musical-notes.netlify.app" class="text-emerald-500 font-semibold" target="_blank">Ver Projeto</a>
+              <a href="https://github.com/scatrus/music-notes" class="text-emerald-500 font-semibold" target="_blank">GitHub</a>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow border border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg font-bold mb-2">SAARA</h3>
+            <p>Integração com API acadêmica para consulta de dados de alunos via Django e autenticação JWT.</p>
+            <div class="mt-4 text-sm italic text-gray-500 dark:text-gray-400">Uso interno no Ifes – Campus Aracruz</div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow border border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg font-bold mb-2">Portfólio Minimalista</h3>
+            <p>Portfólio pessoal com microinterações e design centrado no conteúdo.</p>
+            <div class="mt-4 flex gap-3">
+              <a href="#" class="text-emerald-500 font-semibold" target="_blank">Ver Projeto</a>
+              <a href="https://github.com/scatrus/site" class="text-emerald-500 font-semibold" target="_blank">GitHub</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section id="contato">
-      <h2>Contato</h2>
-      <div class="contato-links">
-        <a class="contato-link" href="https://wa.me/5527997164474" target="_blank" title="WhatsApp">WhatsApp</a>
-        <a class="contato-link" href="mailto:ademarcandeias@gmail.com" target="_blank" title="E-mail">E-mail</a>
-        <a class="contato-link" href="https://github.com/scatrus" target="_blank" title="GitHub">GitHub</a>
-        <a class="contato-link" href="https://linkedin.com/in/ademarcandeias" target="_blank" title="LinkedIn">LinkedIn</a>
-      </div>
-    </section>
-  </main>
-  <footer style="text-align:center; color:#64748b; font-size:0.98rem; margin-bottom:1.2rem; margin-top:1.5rem; opacity:0.7;">
-    &copy; 2025 Ademar G. C. Jr. Todos os direitos reservados.
-  </footer>
-</body>
+      </section>
+      <section id="contato" class="min-h-screen flex flex-col justify-center items-center text-center px-6 py-16 md:py-24 bg-white/95 dark:bg-black/30 backdrop-blur-md shadow-lg">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-emerald-700 dark:text-emerald-400">Contato</h2>
+        <div class="flex flex-wrap justify-center gap-8 mt-8">
+          <a href="https://wa.me/5527997164474" target="_blank" class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-6 w-44 hover:scale-105 transition">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="w-10 h-10 mb-2" style="filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(88deg) brightness(95%) contrast(92%);">
+            <span class="font-semibold">WhatsApp</span>
+          </a>
+          <a href="mailto:ademarcandeias@gmail.com" target="_blank" class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-6 w-44 hover:scale-105 transition">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="E-mail" class="w-10 h-10 mb-2" style="filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(88deg) brightness(95%) contrast(92%);">
+            <span class="font-semibold">E-mail</span>
+          </a>
+          <a href="https://github.com/scatrus" target="_blank" class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-6 w-44 hover:scale-105 transition">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="w-10 h-10 mb-2" style="filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(88deg) brightness(95%) contrast(92%);">
+            <span class="font-semibold">GitHub</span>
+          </a>
+          <a href="https://linkedin.com/in/ademarcandeias" target="_blank" class="flex flex-col items-center bg-white/90 dark:bg-black/40 rounded-xl shadow p-6 w-44 hover:scale-105 transition">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" class="w-10 h-10 mb-2" style="filter: invert(38%) sepia(98%) saturate(749%) hue-rotate(88deg) brightness(95%) contrast(92%);">
+            <span class="font-semibold">LinkedIn</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs md:text-sm opacity-70 py-6 px-4">
+      &copy; 2025 Ademar G. C. Jr. Todos os direitos reservados.
+    </footer>
+
+    <!-- Script tema + scroll progress -->
+    <script>
+      // Tema
+      const toggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          html.classList.toggle('dark');
+          localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+        if (localStorage.getItem('theme') === 'dark') {
+          html.classList.add('dark');
+        }
+      }
+
+      // Scroll progress bar
+      const progressBar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        progressBar.style.width = scrollPercent + '%';
+      });
+
+      // Efeito de transição nas seções
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fadeIn', 'opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+          } else {
+            entry.target.classList.remove('animate-fadeIn', 'opacity-100', 'translate-y-0');
+            entry.target.classList.add('opacity-0', 'translate-y-8');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll('main > section').forEach(section => {
+        section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+        observer.observe(section);
+      });
+    </script>
+  </body>
 </html>
