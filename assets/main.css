@@ -8,13 +8,25 @@ body {
   color: #1e293b;
 }
 html.dark body {
-  background-image: url('assets/img/fundo.png') !important;
+  background-image: url('assets/img/fundo.png');
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
   background-color: #0f172a !important;
   color: #d1fae5;
 }
 
 /* --- SEÇÕES SEM FUNDO --- */
-section {
+section, html.dark section {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* --- MAIN SEM FUNDO EM AMBOS OS TEMAS --- */
+main, html.dark main {
   background: transparent !important;
   box-shadow: none !important;
   border: none !important;
