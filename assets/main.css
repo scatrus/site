@@ -1,5 +1,5 @@
 body {
-  background-image: url('/assets/img/fundo_claro.png');
+  background-image: url('assets/img/fundo_claro.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -8,7 +8,7 @@ body {
   color: #1e293b;
 }
 html.dark body {
-  background-image: url('/assets/img/fundo.png') !important;
+  background-image: url('assets/img/fundo.png') !important;
   background-color: #0f172a !important;
   color: #d1fae5;
 }
