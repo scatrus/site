@@ -40,6 +40,32 @@
         background-image: url('assets/img/fundo.png') !important;
         background-color: #0f172a !important;
       }
+      @media (max-width: 768px) {
+        aside.fixed {
+          position: static !important;
+          top: auto !important;
+          left: auto !important;
+          transform: none !important;
+          margin-bottom: 1.5rem;
+          width: 100%;
+          z-index: 40;
+        }
+        aside.fixed nav {
+          flex-direction: row !important;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem !important;
+          width: 100%;
+          background: rgba(255,255,255,0.95);
+          border-radius: 1.5rem;
+          box-shadow: 0 2px 12px rgba(16,185,129,0.10);
+          padding: 0.5rem 0.5rem;
+        }
+        aside.fixed nav a {
+          font-size: 1rem !important;
+          padding: 0.5rem 0.9rem !important;
+        }
+      }
     </style>
   </head>
   <body class="relative bg-base dark:bg-darkbg text-gray-800 dark:text-darktext transition-colors duration-300">
@@ -48,12 +74,13 @@
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-emerald-500 z-50" style="width: 0%;"></div>
 
     <!-- Menu lateral flutuante -->
-    <aside class="fixed top-1/2 left-2 md:left-4 -translate-y-1/2 z-50 flex flex-col items-center space-y-3">
-      <a href="#sobre" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Sobre</a>
-      <a href="#habilidades" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Habilidades</a>
-      <a href="#projetos" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Projetos</a>
-      <a href="#contato" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Contato</a>
-      <button id="theme-toggle" class="mt-4 bg-white dark:bg-gray-700 text-black dark:text-white p-2 rounded-full shadow-lg hover:ring-2 hover:ring-emerald-500 transition" title="Alternar tema">🌓</button>
+    <aside class="fixed top-1/2 left-2 md:left-4 -translate-y-1/2 z-50 flex flex-col items-center space-y-3 pointer-events-none md:pointer-events-auto">
+      <nav class="flex flex-col items-center space-y-3 bg-white/90 dark:bg-black/60 rounded-2xl shadow-lg px-2 py-3 md:bg-transparent md:dark:bg-transparent md:shadow-none md:px-0 md:py-0 pointer-events-auto">
+        <a href="#sobre" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Sobre</a>
+        <a href="#habilidades" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Habilidades</a>
+        <a href="#projetos" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Projetos</a>
+        <a href="#contato" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-2 rounded-full shadow-lg transition transform hover:scale-105 text-sm md:text-base">Contato</a>
+      </nav>
     </aside>
 
     <!-- Botão voltar ao topo -->
