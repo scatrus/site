@@ -15,7 +15,7 @@ O site está publicado em: [https://scatrus.github.io/site](https://scatrus.gith
 Para rodar localmente:
 ```bash
 # Clone o repositório
-git clone https://github.com/seuusuario/seurepositorio.git
+git clone https://github.com/scatrus/site.git
 cd seurepositorio
 # Abra o index.html no navegador
 ```
